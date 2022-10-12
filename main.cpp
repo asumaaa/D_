@@ -1,5 +1,6 @@
 #include "WinApp.h"
 #include "Message.h"
+#include "input.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -10,6 +11,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	Message* message;	//メッセージ
 	message = Message::GetInstance();
+
+	//キーボード
+	Input* input = nullptr;
+	input = Input::GetInstance();
+	input->Initialize(win);
 
 	//ゲームループ
 	while (true)
