@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DirectXCommon.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Message.cpp" />
     <ClCompile Include="WinApp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DirectXCommon.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="WinApp.h" />
