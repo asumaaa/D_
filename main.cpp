@@ -2,6 +2,7 @@
 #include "Message.h"
 #include "input.h"
 #include "DirectXCommon.h"
+#include "GameScene.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -10,7 +11,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	win = WinApp::GetInstance();
 	win->CreateWindow_(L"あ");
 
-	Message* message;	//メッセージ
+
+	Message* message;
 	message = Message::GetInstance();
 
 	//DirectX初期化処理
@@ -23,16 +25,26 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	input = Input::GetInstance();
 	input->Initialize(win);
 
+	// ゲームシーン
+	GameScene* gameScene = nullptr;
+	gameScene = new GameScene();
+	gameScene->Initialize();
+
 	//ゲームループ
 	while (true)
 	{
 		//メッセージがある？
 		message->Update();
 
+		//ゲームシーン更新
+		gameScene->Update();
+
+		//描画処理
 		dxCommon->PreDraw();
+		//この間に描画処理を書く
+		gameScene->Draw();
 
-		//// 4. 描画コマンド
-
+		//描画処理終了
 		dxCommon->PostDraw();
 
 
