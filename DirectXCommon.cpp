@@ -259,13 +259,13 @@ void DirectXCommon::PreDraw()
 	// レンダーターゲットビューのハンドルを取得
 	D3D12_CPU_DESCRIPTOR_HANDLE rtvHandle = GetRtvHeap()->GetCPUDescriptorHandleForHeapStart();
 	rtvHandle.ptr += bbIndex * device->GetDescriptorHandleIncrementSize(rtvHeapDesc.Type);
-	D3D12_CPU_DESCRIPTOR_HANDLE dsvHandle = dsvHeap->GetCPUDescriptorHandleForHeapStart();
-	GetCommandList()->OMSetRenderTargets(1, &rtvHandle, false, &dsvHandle);
+	/*D3D12_CPU_DESCRIPTOR_HANDLE dsvHandle = dsvHeap->GetCPUDescriptorHandleForHeapStart();
+	GetCommandList()->OMSetRenderTargets(1, &rtvHandle, false, &dsvHandle);*/
 
 	// 3. 画面クリアコマンド   R     G    B    A
 	FLOAT clearColor[] = { 0.1f,0.25f,0.5f,0.0f };
 	GetCommandList()->ClearRenderTargetView(rtvHandle, clearColor, 0, nullptr);
-	GetCommandList()->ClearDepthStencilView(dsvHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
+	/*GetCommandList()->ClearDepthStencilView(dsvHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);*/
 
 }
 
