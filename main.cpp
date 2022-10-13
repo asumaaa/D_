@@ -11,7 +11,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	win = WinApp::GetInstance();
 	win->CreateWindow_(L"あ");
 
-
+	//メッセージ
 	Message* message;
 	message = Message::GetInstance();
 
