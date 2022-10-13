@@ -31,6 +31,8 @@ public:
 	void InitializeFence();				//フェンス関連
 
 	//描画
+	void PreDraw();		//描画前
+	void PostDraw();	//描画後
 
 	//ゲッター
 	ID3D12Device* GetDevice() { return device.Get(); }
@@ -67,6 +69,8 @@ public:
 	ComPtr<IDXGIAdapter4> tmpAdapter;
 	DXGI_SWAP_CHAIN_DESC1 swapChainDesc{};
 	D3D12_RESOURCE_DESC depthResorceDesc{};	//深度バッファ
+	ComPtr<ID3D12DescriptorHeap> dsvHeap;
+	D3D12_RESOURCE_BARRIER barrierDesc{};
 
 	UINT64 fenceVal = 0;
 };
