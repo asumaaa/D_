@@ -2,6 +2,7 @@
 #include "Message.h"
 #include "input.h"
 #include "DirectXCommon.h"
+#include "DirectXMath.h"
 #include "GameScene.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)

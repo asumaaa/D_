@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -146,6 +146,7 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Message.cpp" />
+    <ClCompile Include="Object3d.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="WinApp.cpp" />
   </ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="Message.h" />
+    <ClInclude Include="Object3d.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="WinApp.h" />
   </ItemGroup>
